@@ -23,58 +23,55 @@ class Home extends Component {
     render() {
         return (
             <div>
-                <section id="home" className="video-hero videohero1" data-section="home">
-                    <div className="overlay"></div>
-                    <div className="display-t text-center">
-                        <div className="container">
-                        {/* <div className="col-md-12 col-md-offset-0"> */}
-                            <div>
-                                <div className="animate-box">
-                                    <h2 className="textonimg">
-                                        {
-                                            localStorage.getItem("login") ?
-                                                "Hi " + localStorage.getItem("name") : ""
-                                        }
-                                        <br />
-                                        Relate with love
+                <section id="banner">
+                    <h2 className="textonimg">
+                        Relate with love
                                         </h2>
-                                    <p className="textonimg1">Our purpose is to help adults build intimacy that embodies love's most profound qualities throughout all stages of life</p>
+                    <p className="textonimg1">Our purpose is to help adults build intimacy that embodies love's most profound qualities throughout all stages of life</p>
 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </section>
-
                 {
                     this.state.showPopup ?
                         <Login closePopup={this.togglePopup.bind(this)} term={"home"} />
                         : null
                 }
-                <div className="container videoimg">
-                {
-                    localStorage.getItem("login") ?
-                        // <Videocall/>
-                        <div>
+                <section id="divvideo">
+                    <div class="display-t text-center">
+                        <h2 className="textonimg2">
                             {
-                                this.state.showVideo ?
-                                    <Videocall />
-                                    : <div className="receiverDiv">
+                                localStorage.getItem("login") ?
+                                    "Hi, " + localStorage.getItem("name") : ""
+                            }
+                        </h2>
+                        <div className="">
+                            {
+                                localStorage.getItem("login") ?
+                                    // <Videocall/>
+                                    <div>
+                                        {
+                                            this.state.showVideo ?
+                                                <Videocall />
+                                                : <div className="receiverDiv">
+                                                    <div className="innerDiv">
+                                                        <Button style={{display:"none"}} className="connectbtn" variant="outline-light" onClick={() => this.setState({ showVideo: true })}>Connect</Button>
+                                                    </div>
+                                                </div>
+                                        }
+
+                                    </div>
+                                    :
+                                    <div className="receiverDiv">
                                         <div className="innerDiv">
-                                            <Button className="connectbtn" variant="outline-light" onClick={() => this.setState({ showVideo: true })}>Connect</Button>
+                                            <Button style={{display:"none"}} className="connectbtn btncoonectbefore" variant="outline-light" onClick={this.togglePopup.bind(this)}>Connect</Button>
                                         </div>
                                     </div>
                             }
-
-                        </div>
-                        :
-                        <div className="receiverDiv">
-                            <div className="innerDiv">
-                                <Button className="connectbtn btncoonectbefore" variant="outline-light" onClick={this.togglePopup.bind(this)}>Connect</Button>
+                            <div className="bg-text">
+                            <Button className="connectbtntemp" variant="outline-light">Connect</Button>
                             </div>
                         </div>
-                }
-                </div>
+                    </div>
+                </section>
             </div>
         );
     }

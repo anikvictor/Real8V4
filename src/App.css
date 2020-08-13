@@ -1,17 +1,13 @@
-footer {
-  position: absolute;
-  /* left: 0;*/
+.footer {
+  position: relative;
+  left: 0;
   bottom: 0;
   width: 100%;
+  height: 50px;
   background: radial-gradient(circle,#9c27b0f2 0%,#f4433699 100%)!important;
   color: white;
   text-align: center;
-  /* padding-top: 1em;
-  padding-left: 3em;
-  padding-bottom: 3em;  */
-  height: 2.5rem;   
 }
-
 
 .MainContainer{
   position: relative;
@@ -146,23 +142,38 @@ p {
     color: white;
     font-weight: bolder;
     font-size: 50px;
-    margin-top: 200px;
-    font-family: monospace;
+    font-family: cursive;
+    text-align: center;
 }
 
 .textonimg1
 {
     color: white;
     font-size: 30px;
-    font-family: monospace;
+    font-family: sans-serif;
+    text-align: center;
 }
 
+.textonimg2
+{
+    color: lightcoral;
+    font-weight: bolder;
+    font-size: 50px;
+    font-family: cursive;
+    text-align: center;
+}
 /* css for 7 Aug 2020 start here */
 .receiverDiv { 
-  /* position: relative; */
+  position: relative;
   /* background: radial-gradient(circle,#FF9892 0%,#D7544C 100%); */
-  width: 100%;
-  /* border-radius: 2.5rem; */
+  background-image: url(Images/Videocall.jpg);
+  filter: blur(8px);
+  -webkit-filter: blur(6px);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 70%;
+  border-radius: 2.5rem;
   margin: 0 auto;
   height: 500px;
 }
@@ -233,6 +244,14 @@ h1
   border-radius: 10px !important;
 }
 
+.connectbtntemp {
+  width: 120px !important;
+  height: 50px !important;
+  color: pink !important;
+  background:  indianred !important;
+  border-radius: 10px !important;
+}
+
 .fltright
 {
   float: right;
@@ -249,5 +268,266 @@ h1
 
 .btncoonectbefore
 {
-  margin-left: 600px !important;
+  /* margin-left: 600px !important; */
+  margin-left: 0 !important;
 }
+
+/* Banner */
+
+#banner {
+  /* background-color: #e5474b; */
+  color: #f2a3a5;
+  padding: 13em 0 11em 0;
+  background-image: url("Images/imgbanner.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 15% left;
+  text-align: left;
+  position: relative;
+  z-index: -1;
+}
+
+  #banner input, #banner select, #banner textarea {
+    color: #ffffff;
+  }
+
+  #banner a {
+    color: #ffffff;
+  }
+
+  #banner strong, #banner b {
+    color: #ffffff;
+  }
+
+  #banner h1, #banner h2, #banner h3, #banner h4, #banner h5, #banner h6 {
+    color: #fff;
+  }
+
+  #banner blockquote {
+    border-left-color: #fff;
+  }
+
+  #banner code {
+    background: none;
+    border-color: #fff;
+  }
+
+  #banner hr {
+    border-bottom-color: #fff;
+  }
+
+  #banner input[type="submit"],
+  #banner input[type="reset"],
+  #banner input[type="button"],
+  #banner button,
+  #banner .button {
+    background-color: #5a5a5a;
+    color: #ffffff !important;
+  }
+
+    #banner input[type="submit"]:hover,
+    #banner input[type="reset"]:hover,
+    #banner input[type="button"]:hover,
+    #banner button:hover,
+    #banner .button:hover {
+      background-color: #676767;
+    }
+
+    #banner input[type="submit"]:active,
+    #banner input[type="reset"]:active,
+    #banner input[type="button"]:active,
+    #banner button:active,
+    #banner .button:active {
+      background-color: #4d4d4d;
+    }
+
+    #banner input[type="submit"].alt,
+    #banner input[type="reset"].alt,
+    #banner input[type="button"].alt,
+    #banner button.alt,
+    #banner .button.alt {
+      background-color: transparent;
+      box-shadow: inset 0 0 0 2px #fff;
+      color: #ffffff !important;
+    }
+
+      #banner input[type="submit"].alt:hover,
+      #banner input[type="reset"].alt:hover,
+      #banner input[type="button"].alt:hover,
+      #banner button.alt:hover,
+      #banner .button.alt:hover {
+        background: rgba(255, 255, 255, 0.25);
+      }
+
+      #banner input[type="submit"].alt:active,
+      #banner input[type="reset"].alt:active,
+      #banner input[type="button"].alt:active,
+      #banner button.alt:active,
+      #banner .button.alt:active {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+
+      #banner input[type="submit"].alt.icon:before,
+      #banner input[type="reset"].alt.icon:before,
+      #banner input[type="button"].alt.icon:before,
+      #banner button.alt.icon:before,
+      #banner .button.alt.icon:before {
+        color: #f8d1d2;
+      }
+
+    #banner input[type="submit"].special,
+    #banner input[type="reset"].special,
+    #banner input[type="button"].special,
+    #banner button.special,
+    #banner .button.special {
+      background-color: #ffffff;
+      color: #e5474b !important;
+    }
+
+  #banner:after {
+    -moz-transition: opacity 4s ease;
+    -webkit-transition: opacity 4s ease;
+    -ms-transition: opacity 4s ease;
+    transition: opacity 4s ease;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: block;
+    top: 0;
+    left: 0;
+    background-color: #f4433682;
+    opacity: 0.25;
+  }
+
+  #banner .inner {
+    max-width: 65em;
+    width: calc(100% - 6em);
+    margin: 0 auto;
+    position: relative;
+    z-index: 0;
+    line-height: 1.5;
+  }
+
+    @media screen and (max-width: 480px) {
+
+      #banner .inner {
+        max-width: 90%;
+        width: 90%;
+      }
+
+    }
+
+  #banner h1 {
+    font-size: 2em;
+    margin: 0 0 1em 0;
+    padding: 0;
+    letter-spacing: 3px;
+    font-weight: 700;
+  }
+
+    #banner h1 span {
+      font-weight: 400;
+    }
+
+  body.is-loading #banner:after {
+    opacity: 1;
+  }
+
+  @media screen and (max-width: 1680px) {
+
+    #banner {
+      padding: 15em;
+    }
+
+  }
+
+  @media screen and (max-width: 1280px) {
+
+    #banner {
+      padding: 8em 0 6em 0;
+    }
+
+  }
+
+  @media screen and (max-width: 980px) {
+
+    #banner {
+      padding: 12em 0 10em 0;
+    }
+
+      #banner br {
+        display: none;
+      }
+
+  }
+
+  @media screen and (max-width: 736px) {
+
+    #banner {
+      padding: 4em 0 2em 0;
+    }
+
+      #banner h1 {
+        font-size: 1.75em;
+      }
+
+  }
+
+  @media screen and (max-width: 480px) {
+
+    #banner {
+      padding: 5em 0 3em 0;
+    }
+
+      #banner ul {
+        margin-top: 1em;
+      }
+
+  }
+
+/* Main */
+
+#main {
+  padding: 4em 0 2em 0;
+}
+
+#one {
+  padding: 6em 0 4em 0;
+}
+
+  @media screen and (max-width: 980px) {
+
+    #one {
+      padding: 4em 0 2em 0;
+    }
+
+  }
+
+  @media screen and (max-width: 736px) {
+
+    #one {
+      padding: 2em 0 0.1em 0;
+    }
+
+  }
+
+  #divvideo
+  {
+    background-color: antiquewhite;
+  }
+
+  #divvideoblurimage
+  {
+    background-image: url(Images/Videocall.jpg);
+  }
+  .bg-text {
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    margin-left: 40em;
+    margin-top: -17em;
+    text-align: center;
+  }
