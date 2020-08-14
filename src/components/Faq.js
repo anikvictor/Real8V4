@@ -23,15 +23,17 @@ const Faq = () => {
     ];
     return (
 
-        <div>
-            <div className="container">
-                <h1>About</h1>
-            </div>
-            <div className="container">
-                <div className="headcommingsoon">
-                    Coming Soon
+        <div className="container">
+                <section id="main" >
+                    <div class="inner">
+                        <header class="container">
+                            <h1>FAQ</h1>
+                        </header>
+                        <div className="headcommingsoon">
+                            Coming Soon
                     </div>
-            </div>
+                    </div>
+                </section>
             <div style={{ display: "none" }}>
                 <Accordion defaultActiveKey={0} activeKey={activeKey}>
                     {data.map((item, index) => (

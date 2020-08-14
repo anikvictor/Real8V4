@@ -4,16 +4,17 @@ class Services extends Component {
     render() {
         return (
             <div className="container">
-                <div className="container">
-                    <h1>How to Use</h1>
-                </div>
-                
-                <div className="container">
-                    <div className="headcommingsoon">
-                        Coming Soon
+                <section id="main" >
+                    <div class="inner">
+                        <header class="container">
+                            <h1>How to Use</h1>
+                        </header>
+                        <div className="headcommingsoon">
+                            Coming Soon
                     </div>
-                </div>
-                
+                    </div>
+                </section>
+
                 <div className="container" style={{ display: "none" }}>
                     <h1>How do I start?</h1><br />
                     <div>

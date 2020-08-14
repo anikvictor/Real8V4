@@ -192,13 +192,13 @@ class Login extends Component {
                         fields="name,email,picture"
                         onClick={this.componentClicked}
                         callback={this.responseFacebook}
-                        cssClass="roundButton btn btn-outline-secondary btn-block btn-lg"
+                        cssClass="roundButton btnfb btn-block"
                         icon={<FontAwesomeIcon icon={faFacebookSquare} />}
                         textButton="&nbsp;&nbsp;Continue with Facebook"
                     />
                     <br />
 
-                    <Button variant="outline-secondary" className="roundButton" size="lg" block onClick={() => this.setState({ show: true })}>Continue with email</Button>
+                    <Button className="roundButton btn btn-block" size="lg" block onClick={() => this.setState({ show: true })}>Continue with email</Button>
                     <br />
 
                     {

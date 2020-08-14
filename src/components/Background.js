@@ -3,17 +3,17 @@ import React, { Component } from 'react';
 class Background extends Component {
     render() {
         return (
-            <div>
-                <div className="container">
-                    <h1>About</h1>
-                    {/* <p>Real8 (pronounced "Relate") is a dating app that addresses the increase sense of isolation which has become a public health epidemic. Our team is comprised of psychologists and social scientists who have dedicated their careers to increasing human connection. </p> */}
-                </div>
-
-                <div className="container">
-                    <div className="headcommingsoon">
-                        Coming Soon
+            <div className="container">
+                <section id="main" >
+                    <div class="inner">
+                        <header class="container">
+                            <h1>About Us</h1>
+                        </header>
+                        <div className="headcommingsoon">
+                            Coming Soon
                     </div>
-                </div>
+                    </div>
+                </section>
 
                 <div className="container" style={{ display: "none" }}>
                     <div>

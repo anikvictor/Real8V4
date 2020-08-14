@@ -9,14 +9,16 @@ class GetInTouch extends Component {
     render() {
         return (
             <div className="container">
-                <div className="container">
-                    <h1>Get In Touch</h1>
-                </div>
-                <div className="container">
-                    <div className="headcommingsoon">
-                        Coming Soon
+                <section id="main" >
+                    <div class="inner">
+                        <header class="container">
+                            <h1>Get In Touch</h1>
+                        </header>
+                        <div className="headcommingsoon">
+                            Coming Soon
                     </div>
-                </div>
+                    </div>
+                </section>
                 <div style={{ display: "none" }}>
                     <h1>Tell us about yourself</h1><br />
                     <div>
