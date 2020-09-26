@@ -16,8 +16,8 @@ class Login extends Component {
             email: "",
             password: "",
             name: "",
-            user:null,
-            fire:null,
+            user: null,
+            fire: null,
 
             //error handel
             uEmail: "",
@@ -32,18 +32,18 @@ class Login extends Component {
 
     login() {
         if (this.state.email.trim() !== "" && this.state.password !== "") {
-                fire.auth().signInWithEmailAndPassword(this.state.email.trim(),this.state.password).then((result)=>{
-                    localStorage.setItem("login", result.user);
-                    localStorage.setItem("name", result.user.email);
-                    localStorage.setItem("email", result.user.email);
-                    this.setState({fire:"YES"})
-                    window.location.href = "/";
-                    this.props.closePopup();
-                }).catch((err)=>{
-                    this.setState({ msg: "Invalid login", variant: "danger" });
-                    this.setState({ error: !this.state.error });
-                })           
-            }
+            fire.auth().signInWithEmailAndPassword(this.state.email.trim(), this.state.password).then((result) => {
+                localStorage.setItem("login", result.user);
+                localStorage.setItem("name", result.user.email);
+                localStorage.setItem("email", result.user.email);
+                this.setState({ fire: "YES" })
+                window.location.href = "/";
+                this.props.closePopup();
+            }).catch((err) => {
+                this.setState({ msg: "Invalid login", variant: "danger" });
+                this.setState({ error: !this.state.error });
+            })
+        }
         else if (this.state.email.trim().length === 0) {
             this.setState({ uEmail: "Email can't be blank" });
         }
@@ -71,22 +71,22 @@ class Login extends Component {
         else {
             this.props.closePopup()
 
-            fire.auth().createUserWithEmailAndPassword(this.state.email.trim(),this.state.password).then((result)=>{
-                this.setState({fire:"YES"})
+            fire.auth().createUserWithEmailAndPassword(this.state.email.trim(), this.state.password).then((result) => {
+                this.setState({ fire: "YES" })
 
                 var user = fire.auth().currentUser;
-                user.sendEmailVerification().then(function() {
+                user.sendEmailVerification().then(function () {
                     console.warn("please check mail to verify");
-                }).catch(function(error) {
+                }).catch(function (error) {
                     console.warn("mail not sent");
                 });
-                
+
                 localStorage.setItem("login", result.user);
                 localStorage.setItem("name", result.user.email);
                 localStorage.setItem("email", result.user.email);
                 window.location.href = "/";
                 this.props.closePopup();
-            }).catch((err)=>{
+            }).catch((err) => {
                 this.setState({ msg: "Unable to Sign Up", variant: "danger" });
                 this.setState({ error: !this.state.error });
             })
@@ -108,18 +108,17 @@ class Login extends Component {
             : this.setState({ show: true })
 
 
-        if(this.state.fire==="YES"){
-        fire.auth().onAuthStateChanged(user => {
-        if (!user) {
-            window.location.href = "/";
-        } else {
-            this.setState({ user });
+        if (this.state.fire === "YES") {
+            fire.auth().onAuthStateChanged(user => {
+                // if (!user) {
+                //     window.location.href = "/";
+                // } else {
+                //     this.setState({ user });
+                // }
+            });
         }
-        });
-        }
-        else
-        {
-            this.setState({fire:null})            
+        else {
+            this.setState({ fire: null })
         }
     }
 
@@ -183,7 +182,7 @@ class Login extends Component {
 
                                     <Button variant="secondary" onClick={() => this.login()}>Sign In</Button>
                                     &nbsp;&nbsp;&nbsp;&nbsp;
-                                    <Link to="/Recoverpwd" onClick={()=>this.HandelModel()}>Forgot your password?</Link>
+                                    <Link to="/Recoverpwd" onClick={() => this.HandelModel()}>Forgot your password?</Link>
                                     <br />
 
                                     <span>New to Real 8?</span>&nbsp;&nbsp;
