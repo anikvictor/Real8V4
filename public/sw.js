@@ -9,9 +9,6 @@ this.addEventListener("install", (event) => {
                 "/static/js/0.chunk.js",
                 "/index.html",
                 "/",
-                "/GetInTouch",
-                "/Testimonials",
-                "/Faq",
                 "/Login"
                 //all pages which is taking too much time and want to access offline as well the mention here 
             ])
