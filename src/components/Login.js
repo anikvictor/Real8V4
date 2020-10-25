@@ -70,17 +70,17 @@ class Login extends Component {
         else {
             fire.auth().createUserWithEmailAndPassword(this.state.email.trim(), this.state.password).then((result) => {
                 var user = fire.auth().currentUser;
-                    user.updateProfile({
-                        displayName: this.state.name.trim()
-                    }).then(function () {
-                        user.sendEmailVerification().then(function () {
-                            this.setState({ fire: "YES", msg: "Sign Up successfully. Check your mail.", showdiv: true, variant: "primary", error: !this.state.error })
-                        }).catch(function (error) {});
-                    }).catch(function (error) {});
-                    this.setState({ fire: "YES", msg: "Sign Up successfully. Check your mail.", showdiv: true, variant: "primary", error: !this.state.error })
-                    this.setState({ name: "", email: "", password: "" })
-            }).catch((er)=>{
-                this.setState({ msg: ""+er.message, variant: "danger" });
+                user.updateProfile({
+                    displayName: this.state.name.trim()
+                }).then(function () {
+                    user.sendEmailVerification().then(function () {
+                        this.setState({ fire: "YES", msg: "Sign Up successfully. Check your mail.", showdiv: true, variant: "primary", error: !this.state.error })
+                    }).catch(function (error) { });
+                }).catch(function (error) { });
+                this.setState({ fire: "YES", msg: "Sign Up successfully. Check your mail.", showdiv: true, variant: "primary", error: !this.state.error })
+                this.setState({ name: "", email: "", password: "" })
+            }).catch((er) => {
+                this.setState({ msg: "" + er.message, variant: "danger" });
                 this.setState({ error: !this.state.error });
             })
         }
@@ -117,22 +117,20 @@ class Login extends Component {
 
 
         fire.auth().onAuthStateChanged(user => {
+            console.warn(user);
         });
     }
 
     facebookLogin() {
-        fire.auth().signInWithPopup(provider).then((result, error) => {
-            if (error) {
-                this.setState({ msg: error.message, variant: "danger" });
-                this.setState({ error: !this.state.error });
-            }
-            else {
-                localStorage.setItem("login", result.user);
-                localStorage.setItem("name", result.user.displayName);
-                localStorage.setItem("email", result.user.email);
-                window.location.href = "/";
-                this.props.closePopup();
-            }
+        fire.auth().signInWithPopup(provider).then((result) => {
+            localStorage.setItem("login", result.user);
+            localStorage.setItem("name", result.user.displayName);
+            localStorage.setItem("email", result.user.email);
+            window.location.href = "/";
+            this.props.closePopup();
+        }).catch((err) => {
+            this.setState({ msg: "" + err.message, variant: "danger" });
+            this.setState({ error: !this.state.error });
         });
     }
 
